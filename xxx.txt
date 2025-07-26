@@ -1,0 +1,146 @@
+## Features
+
+- 🔗 **Wallet Connection**: Connect to MetaMask and other Web3 wallets
+- 📊 **Dashboard**: View wallet balance, token information, and transaction history
+- 🪙 **Token Management**: Interact with custom ERC-20 token (SimpleToken)
+- 💰 **Transaction Support**: Send ETH transactions
+- 🎨 **Modern UI**: Beautiful interface built with Tailwind CSS
+- ⚡ **Fast Development**: Built with Vite for rapid development
+
+## Tech Stack
+
+- **Frontend**: React 18 + TypeScript + Vite
+- **Styling**: Tailwind CSS
+- **Web3**: Ethers.js v6
+- **Smart Contracts**: Solidity + Hardhat
+- **Icons**: Lucide React
+
+## Prerequisites
+
+- Node.js (v16 or higher)
+- npm or yarn
+- MetaMask browser extension
+
+## Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd dapp
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser**
+   Navigate to `http://localhost:5173`
+
+## Smart Contract Development
+
+### Compile Contracts
+```bash
+npx hardhat compile
+```
+
+### Deploy to Local Network
+```bash
+# Start local Hardhat node
+npx hardhat node
+
+# Deploy contracts (in a new terminal)
+npx hardhat run scripts/deploy.js --network localhost
+```
+
+### Deploy to Testnet
+```bash
+npx hardhat run scripts/deploy.js --network sepolia
+```
+
+## Project Structure
+
+```
+dapp/
+├── contracts/           # Solidity smart contracts
+│   └── SimpleToken.sol
+├── src/
+│   ├── components/      # React components
+│   │   ├── Dashboard.tsx
+│   │   └── WalletConnect.tsx
+│   ├── hooks/          # Custom React hooks
+│   │   └── useWallet.ts
+│   ├── types/          # TypeScript type definitions
+│   │   └── web3.ts
+│   ├── App.tsx         # Main application component
+│   ├── main.tsx        # Application entry point
+│   └── index.css       # Global styles
+├── hardhat.config.js   # Hardhat configuration
+├── package.json        # Dependencies and scripts
+└── README.md          # This file
+```
+
+## Usage
+
+1. **Connect Wallet**: Click "Connect Wallet" to connect your MetaMask wallet
+2. **View Dashboard**: Once connected, you'll see your wallet information and token balances
+3. **Send Transactions**: Use the "Send ETH" button to send transactions
+4. **Token Operations**: Mint and burn tokens (requires contract owner permissions)
+
+## Configuration
+
+### Environment Variables
+Create a `.env` file in the root directory:
+```env
+PRIVATE_KEY=your_private_key_here
+SEPOLIA_RPC_URL=your_sepolia_rpc_url_here
+```
+
+### Network Configuration
+Update `hardhat.config.js` to add your preferred networks and API keys.
+
+## Development
+
+### Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+- `npx hardhat compile` - Compile smart contracts
+- `npx hardhat test` - Run smart contract tests
+
+### Adding New Features
+
+1. **Smart Contracts**: Add new contracts in the `contracts/` directory
+2. **Components**: Create new React components in `src/components/`
+3. **Hooks**: Add custom hooks in `src/hooks/`
+4. **Types**: Define new TypeScript types in `src/types/`
+
+## Security Considerations
+
+- Never commit private keys or sensitive data
+- Use environment variables for API keys
+- Test thoroughly on testnets before mainnet deployment
+- Follow security best practices for smart contract development
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License.
+
+## Support
+
+For support and questions, please open an issue on GitHub. 
